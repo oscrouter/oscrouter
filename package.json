@@ -1,25 +1,19 @@
 {
-  "name": "oscrouter-web",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "react-scripts": "2.1.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+	"name": "example-create-react-app-express",
+	"version": "1.0.0",
+	"scripts": {
+		"client": "cd client && npm start",
+		"server": "nodemon server.js",
+		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+	},
+	"dependencies": {
+		"body-parser": "^1.18.3",
+		"express": "^4.16.4",
+		"nodemon": "^1.17.3",
+		"socket.io": "^2.1.0",
+		"uuid": "^3.3.2"
+	},
+	"devDependencies": {
+		"concurrently": "^4.0.1"
+	}
 }
