@@ -10,7 +10,6 @@ class App extends Component {
 		super(props)
 
 		this.state = {
-			socket: openSocket('http://localhost:1337'),
 			tcpsettings: false,
 			routes: {
 				"9cb5d8de-5f9d-46ae-b62c-b64425954500": {
@@ -21,7 +20,9 @@ class App extends Component {
 			tooltipOpen: false
 		}
 
-		this.state.socket.on('board', board => {
+		this._socket = openSocket('http://localhost:1337');
+
+		this._socket.on('board', board => {
 
 		});
 
@@ -60,7 +61,7 @@ class App extends Component {
 	}
 
 	apply() {
-		this.state.socket.emit('apply', {routes: this.state.routes});
+		this._socket.emit('apply', {routes: this.state.routes});
 	}
 
 	render() {

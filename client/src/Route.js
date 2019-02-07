@@ -6,7 +6,6 @@ export class Route extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			"last": this.props.uuid === this.props.last
 		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
@@ -21,13 +20,17 @@ export class Route extends Component {
 		this.props.updateRoute(this.props.uuid,name,value)
 	}
 
+	componentDidUpdate () {
+		console.log("hey I updated")
+	}
+
 	removeRoute() {
 		this.props.removeRoute(this.props.uuid)
 	}
 
 	render() {
 		let operator = <Button size="sm" onClick={this.removeRoute}>-</Button>
-		if(this.state.last) {
+		if(this.props.uuid === this.props.last) {
 			operator = <Button size="sm" onClick={this.props.addRoute}>+</Button>
 		}
 		return (
