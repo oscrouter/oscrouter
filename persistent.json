@@ -1,0 +1,47 @@
+{
+	"9cb5d8de-5f9d-46ae-b62c-b64425954500": {
+		"label": "hi",
+		"incomingtype": "udp",
+		"incomingip": "",
+		"incomingport": "8000",
+		"incomingpath": "/eos/out/event/cue/1/:cue/fire",
+		"incomingmin": "",
+		"incomingmax": "",
+		"outgoingtype": "udp",
+		"outgoingip": "127.0.0.1",
+		"outgoingport": "9000",
+		"outgoingpath": "/cue/:cue/start",
+		"outgoingmin": "",
+		"outgoingmax": ""
+	},
+	"9cb5d8de-5f9d-46ae-b62c-b64425954501": {
+		"label": "hi",
+		"incomingtype": "udp",
+		"incomingip": "",
+		"incomingport": "8000",
+		"incomingpath": "/eos/out/event/cue/1/:cue/fire",
+		"incomingmin": "",
+		"incomingmax": "",
+		"outgoingtype": "tcpserver",
+		"outgoingip": "127.0.0.1",
+		"outgoingport": "9000",
+		"outgoingpath": "/cue/:cue/start",
+		"outgoingmin": "",
+		"outgoingmax": ""
+	},
+	"9cb5d8de-5f9d-46ae-b62c-b64425954502": {
+		"label": "hi",
+		"incomingtype": "tcpserver",
+		"incomingip": "127.0.0.1",
+		"incomingport": "9000",
+		"incomingpath": "/cue/:cue/start",
+		"incomingmin": "",
+		"incomingmax": "",
+		"outgoingtype": "udp",
+		"outgoingip": "",
+		"outgoingport": "9500",
+		"outgoingpath": "/cue/:cue/start",
+		"outgoingmin": "",
+		"outgoingmax": ""
+	}
+}
