@@ -3,8 +3,9 @@
 	"version": "1.0.0",
 	"scripts": {
 		"client": "cd client && npm start",
-		"server": "NODE_ENV=development nodemon --watch lib/ --watch server.js --watch Sockets.js --watch Routes.js",
-		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+		"server": "babel-node server.js",
+		"devserver": "nodemon --watch lib/ --watch server.js --watch Sockets.js --watch Routes.js",
+		"dev": "concurrently --kill-others-on-fail \"npm run devserver\" \"npm run client\""
 	},
 	"nodemonConfig": {
 		"exec": "babel-node server.js",
@@ -40,6 +41,10 @@
 	},
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
-		"concurrently": "^4.0.1"
+		"concurrently": "^4.0.1",
+		"grunt": "^1.0.3",
+		"grunt-babel": "^7.0.0",
+		"grunt-contrib-copy": "^1.0.0",
+		"load-grunt-tasks": "^4.0.0"
 	}
 }
