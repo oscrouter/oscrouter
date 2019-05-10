@@ -1,7 +1,7 @@
 const src = [{
   'expand': true,
   'src': [
-    'server.js',
+    'index.js',
     'lib/**/*.js',
     'Routes.js',
     'Servers.js'

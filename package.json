@@ -1,14 +1,13 @@
 {
-	"name": "example-create-react-app-express",
+	"name": "oscrouter",
 	"version": "1.0.0",
 	"scripts": {
-		"client": "cd client && npm start",
-		"server": "babel-node server.js",
-		"devserver": "nodemon --watch lib/ --watch server.js --watch Sockets.js --watch Routes.js",
-		"dev": "concurrently --kill-others-on-fail \"npm run devserver\" \"npm run client\""
+		"start": "node dist/index.js",
+		"dev": "nodemon --watch lib/ --watch index.js --watch Sockets.js --watch Routes.js"
 	},
+	"main": "dist/index.js",
 	"nodemonConfig": {
-		"exec": "babel-node server.js",
+		"exec": "babel-node test.js",
 		"verbose": true,
 		"delay": 2000,
 		"ext": "*.js"
@@ -26,24 +25,24 @@
 		]
 	},
 	"dependencies": {
-		"async": "^2.6.1",
-		"babel-polyfill": "^6.26.0",
-		"babel-preset-env": "^1.7.0",
-		"body-parser": "^1.18.3",
-		"express": "^4.16.4",
-		"nodemon": "^1.17.3",
+		"async": "^2.6.2",
+		"body-parser": "^1.19.0",
 		"osc": "^2.2.4",
 		"route-parser": "0.0.5",
 		"sha256": "^0.2.0",
-		"socket.io": "^2.1.0",
 		"uuid": "^3.3.2",
 		"winston": "^3.2.1"
 	},
 	"devDependencies": {
-		"babel-cli": "^6.26.0",
+		"nodemon": "^1.19.0",
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"grunt-babel": "^8.0.0",
+		"@babel/cli": "^7.4.4",
+		"@babel/core": "^7.4.4",
+		"@babel/node": "^7.2.2",
 		"concurrently": "^4.0.1",
-		"grunt": "^1.0.3",
-		"grunt-babel": "^7.0.0",
+		"grunt": "^1.0.4",
 		"grunt-contrib-copy": "^1.0.0",
 		"load-grunt-tasks": "^4.0.0"
 	}
