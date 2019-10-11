@@ -1,10 +1,8 @@
 const src = [{
   'expand': true,
+  'cwd': 'src/',
   'src': [
-    'index.js',
-    'lib/**/*.js',
-    'Routes.js',
-    'Servers.js'
+    '**/*.js',
   ],
   'dest': 'dist/',
   'ext': '.js'
@@ -34,11 +32,11 @@ module.exports = function (grunt) {
       }
     },
     copy: {
-        main: {
-            files: [
-                {expand: true, src: ['persistent.json'], dest: 'dist/', filter: 'isFile'}
-            ]
-        }
+      main: {
+        files: [
+          { expand: true, src: ['persistent.json'], dest: 'dist/', filter: 'isFile' }
+        ]
+      }
     }
   })
 

@@ -1,4 +1,7 @@
-{
+const { Routes } = require('./dist/index');
+
+const eachOfSeries = require('async/eachOfSeries');
+const allRoutes = {
 	"9cb5d8de-5f9d-46ae-b62c-b64425954500": {
 		"label": "hi",
 		"incomingtype": "udp",
@@ -30,3 +33,25 @@
 		"outgoingmax": ""
 	}
 }
+	;
+
+loadRoutes(allRoutes)
+
+function loadRoutes(routes) {
+	eachOfSeries(
+		routes,
+		(val, key, next) => {
+			Routes.addRoute(key, val)
+			next();
+		}
+	)
+}
+
+
+Routes.on('outgoingpacket', (uuid) => {
+	console.log('Packet out')
+})
+
+Routes.on('incomingpacket', (uuid) => {
+	console.log('Packet in')
+})
